@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>LAM Advisory – AI & Quantum Counselling</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500&display=swap">
+<style>
+:root{--bg:#f4f5f2;--surface:#ffffff;--ink:#12202e;--muted:#566474;--line:#d5dad9;--accent:#2740c9;--accent-ink:#ffffff;--wave:#2740c9;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d1722;--surface:#142333;--ink:#e8edf2;--muted:#9aa9b8;--line:#25384b;--accent:#8aa2ff;--accent-ink:#0d1722;--wave:#8aa2ff;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0d1722;--surface:#142333;--ink:#e8edf2;--muted:#9aa9b8;--line:#25384b;--accent:#8aa2ff;--accent-ink:#0d1722;--wave:#8aa2ff;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 "IBM Plex Sans",system-ui,sans-serif}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:500;line-height:1.12;margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+header{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+.brand{font-family:Fraunces,Georgia,serif;font-weight:600;font-size:1.15rem;text-decoration:none;letter-spacing:.01em}
+.lang{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+.lang button{background:none;border:0;color:var(--muted);font:500 .85rem "IBM Plex Sans",sans-serif;padding:7px 14px;cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.hero{display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:center;padding:56px 0 72px}
+.hero h1{font-size:clamp(2.3rem,5.6vw,4.2rem);letter-spacing:-.02em}
+.hero p{max-width:34em;color:var(--muted);font-size:1.1rem;margin:22px 0 30px}
+.btn{display:inline-block;background:var(--accent);color:var(--accent-ink);text-decoration:none;font-weight:500;padding:14px 26px;border-radius:6px}
+.btn.alt{background:none;color:var(--ink);border:1px solid var(--line);margin-left:10px}
+.wave{width:100%;height:auto}
+.wave path{fill:none;stroke:var(--wave);stroke-width:2;stroke-linecap:round}
+.wave path:nth-child(2){opacity:.55}.wave path:nth-child(3){opacity:.25}
+@media (prefers-reduced-motion:no-preference){.wave path{stroke-dasharray:900;stroke-dashoffset:900;animation:draw 2.4s ease-out forwards}.wave path:nth-child(2){animation-delay:.3s}.wave path:nth-child(3){animation-delay:.6s}}
+@keyframes draw{to{stroke-dashoffset:0}}
+section{padding:64px 0;border-top:1px solid var(--line)}
+section>.wrap>h2{font-size:clamp(1.7rem,3.4vw,2.4rem);max-width:20em;margin-bottom:34px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:26px}
+.card h3{font-size:1.3rem;margin-bottom:10px}
+.card p{margin:0;color:var(--muted)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;counter-reset:s}
+.steps div{counter-increment:s;border-top:2px solid var(--accent);padding-top:16px}
+.steps h3{font-size:1.2rem;margin-bottom:8px}
+.steps h3::before{content:counter(s) ". "}
+.steps p{margin:0;color:var(--muted)}
+.who{columns:2;column-gap:40px;padding:0;margin:0;list-style:none;max-width:760px}
+.who li{padding:10px 0;border-bottom:1px solid var(--line);break-inside:avoid}
+.contact{text-align:left}
+.contact p{color:var(--muted);max-width:34em;margin:0 0 26px}
+footer{border-top:1px solid var(--line);padding:26px 0 34px;color:var(--muted);font-size:.9rem}
+@media (max-width:760px){.hero{grid-template-columns:1fr;padding-top:24px}.grid,.steps{grid-template-columns:1fr}.who{columns:1}.btn.alt{margin:12px 0 0}}
+.top{background:radial-gradient(900px 420px at 85% 5%,rgba(90,140,255,.38),transparent 60%),radial-gradient(600px 400px at 0% 100%,rgba(125,224,255,.14),transparent 60%),linear-gradient(180deg,#0a1424,#10213b);color:#eef3fb;position:relative;overflow:hidden}
+.top::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:44px 44px;-webkit-mask-image:linear-gradient(180deg,#000,transparent 85%);mask-image:linear-gradient(180deg,#000,transparent 85%)}
+.top .wrap{position:relative}
+.top .brand{color:#fff}
+.top .lang{border-color:rgba(255,255,255,.28)}
+.top .lang button{color:#b9c6da}
+.top .lang button[aria-pressed="true"]{background:#fff;color:#0a1424}
+.top .hero p{color:#c1cde0}
+.top .btn{background:#7de0ff;color:#06182a}
+.top .btn.alt{background:none;color:#fff;border:1px solid rgba(255,255,255,.4)}
+.top .btn:hover{filter:brightness(1.08)}
+.hero{padding:40px 0 48px}
+.top .wave{filter:drop-shadow(0 0 8px rgba(125,224,255,.45))}
+.top .wave path{stroke-width:2.4}
+.top .wave path:nth-child(1){stroke:#7de0ff}
+.top .wave path:nth-child(2){stroke:#9aa8ff;opacity:.8}
+.top .wave path:nth-child(3){stroke:#ffffff;opacity:.35}
+.strip{display:flex;flex-wrap:wrap;gap:0 24px;border-top:1px solid rgba(255,255,255,.16)}
+.strip span{flex:1 1 190px;padding:20px 0 26px;color:#fff;font-family:Fraunces,Georgia,serif;font-size:1.1rem}
+.strip small{display:block;margin-top:4px;font:400 .88rem/1.4 "IBM Plex Sans",system-ui,sans-serif;color:#9fb0c9}
+section:nth-of-type(even){background:var(--surface)}
+.card{border-top:3px solid var(--accent);padding:28px}
+.grid .card:nth-child(2){border-top-color:#0fa3b8}
+.grid .card:nth-child(3){border-top-color:#7a4fe0}
+.grid .card:nth-child(4){border-top-color:#d98a1c}
+.steps div{border-top-width:3px}
+.steps h3::before{color:var(--accent)}
+.who{columns:1;display:flex;flex-wrap:wrap;gap:10px;max-width:none}
+.who li{border:1px solid var(--line);border-radius:999px;padding:9px 22px;background:var(--surface)}
+#contact .contact{background:linear-gradient(135deg,#0f2038,#22408a);color:#fff;border-radius:16px;padding:52px 44px}
+#contact .contact p{color:#cbd6e8}
+#contact .btn{background:#7de0ff;color:#06182a}
+@media (max-width:760px){.hero{padding-top:12px}#contact .contact{padding:34px 22px}}
+.social{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.social a{color:#fff;border:1px solid rgba(255,255,255,.4);border-radius:999px;padding:8px 20px;text-decoration:none;font-size:.95rem}
+.social a:hover{background:rgba(255,255,255,.12)}
+</style>
+</head>
+<body>
+<div class="top"><div class="wrap">
+<header>
+<a class="brand" href="#top">LAM Advisory</a>
+<div class="lang" role="group" aria-label="Language">
+<button data-l="en" aria-pressed="true">EN</button><button data-l="fr" aria-pressed="false">FR</button>
+</div>
+</header>
+
+<div class="hero" id="top">
+<div>
+<h1 data-en="Plain counsel on AI and quantum risk." data-fr="Des conseils clairs sur les risques liés à l’IA et au quantique.">Plain counsel on AI and quantum risk.</h1>
+<p data-en="LAM Advisory helps banks, insurers and finance teams reduce the risks of AI and quantum computing, and use both to work faster and with fewer errors." data-fr="LAM Advisory aide les banques, assureurs et équipes financières à réduire les risques de l’IA et de l’informatique quantique, et à les utiliser pour travailler plus vite et avec moins d’erreurs.">LAM Advisory helps banks, insurers and finance teams reduce the risks of AI and quantum computing, and use both to work faster and with fewer errors.</p>
+<a class="btn" href="#contact" data-en="Book a first conversation" data-fr="Prendre un premier rendez-vous">Book a first conversation</a>
+<a class="btn alt" href="#services" data-en="See services" data-fr="Voir les services">See services</a>
+</div>
+<svg class="wave" viewBox="0 0 320 240" role="img" aria-label="Overlapping probability waves">
+<path d="M0 120 C40 20 80 20 120 120 S200 220 240 120 S300 40 320 90"/>
+<path d="M0 140 C50 60 90 60 130 140 S210 200 250 130 S300 80 320 110"/>
+<path d="M0 100 C30 160 70 160 110 100 S190 40 230 100 S300 170 320 130"/>
+</svg>
+</div>
+<div class="strip">
+<span><b data-en="Banking and insurance" data-fr="Banque et assurance" style="font-weight:500">Banking and insurance</b><small data-en="Senior professional background" data-fr="Parcours de professionnel senior">Senior professional background</small></span>
+<span><b data-en="Compliance" data-fr="Conformité" style="font-weight:500">Compliance</b><small data-en="Consulting for banks and insurers" data-fr="Conseil pour banques et assureurs">Consulting for banks and insurers</small></span>
+<span><b data-en="Digital assets" data-fr="Actifs numériques" style="font-weight:500">Digital assets</b><small data-en="And quantum computing expertise" data-fr="Et expertise en informatique quantique">And quantum computing expertise</small></span>
+<span><b data-en="English and French" data-fr="Français et anglais" style="font-weight:500">English and French</b><small data-en="Work in the language you prefer" data-fr="Travail dans la langue de votre choix">Work in the language you prefer</small></span>
+</div>
+</div></div>
+
+<section id="services"><div class="wrap">
+<h2 data-en="What we help you with" data-fr="Ce que nous faisons pour vous">What we help you with</h2>
+<div class="grid">
+<div class="card"><h3 data-en="AI risk reduction" data-fr="Réduction des risques liés à l’IA">AI risk reduction</h3><p data-en="Map where AI is used in your organisation, find the weak points, and set clear rules for data, models and human oversight." data-fr="Cartographier où l’IA est utilisée dans votre organisation, repérer les points faibles et fixer des règles claires sur les données, les modèles et la supervision humaine.">Map where AI is used in your organisation, find the weak points, and set clear rules for data, models and human oversight.</p></div>
+<div class="card"><h3 data-en="Quantum readiness" data-fr="Préparation au quantique">Quantum readiness</h3><p data-en="Understand which of your systems and encrypted data could be exposed by quantum computers, and plan the move to safer cryptography." data-fr="Comprendre quels systèmes et quelles données chiffrées pourraient être exposés par les ordinateurs quantiques, et planifier la transition vers une cryptographie plus sûre.">Understand which of your systems and encrypted data could be exposed by quantum computers, and plan the move to safer cryptography.</p></div>
+<div class="card"><h3 data-en="Productivity systems" data-fr="Systèmes de productivité">Productivity systems</h3><p data-en="Design AI-assisted workflows for reporting, document review and client service, with checks built in from the start." data-fr="Concevoir des processus assistés par l’IA pour le reporting, la revue de documents et le service client, avec des contrôles intégrés dès le départ.">Design AI-assisted workflows for reporting, document review and client service, with checks built in from the start.</p></div>
+<div class="card"><h3 data-en="Compliance and governance" data-fr="Conformité et gouvernance">Compliance and governance</h3><p data-en="Turn regulation and internal policy into practical procedures your teams can follow, backed by a compliance background in banking and insurance." data-fr="Transformer la réglementation et les politiques internes en procédures concrètes pour vos équipes, grâce à une expérience de la conformité en banque et en assurance.">Turn regulation and internal policy into practical procedures your teams can follow, backed by a compliance background in banking and insurance.</p></div>
+</div>
+</div></section>
+
+<section><div class="wrap">
+<h2 data-en="How an engagement works" data-fr="Le déroulement d’une mission">How an engagement works</h2>
+<div class="steps">
+<div><h3 data-en="Assess" data-fr="Évaluer">Assess</h3><p data-en="A short review of your tools, data and exposure." data-fr="Un examen rapide de vos outils, de vos données et de votre exposition.">A short review of your tools, data and exposure.</p></div>
+<div><h3 data-en="Prioritise" data-fr="Prioriser">Prioritise</h3><p data-en="A written plan that ranks risks and quick wins." data-fr="Un plan écrit qui classe les risques et les gains rapides.">A written plan that ranks risks and quick wins.</p></div>
+<div><h3 data-en="Support" data-fr="Accompagner">Support</h3><p data-en="Hands-on help while your team puts the plan in place." data-fr="Un appui concret pendant que votre équipe met le plan en œuvre.">Hands-on help while your team puts the plan in place.</p></div>
+</div>
+</div></section>
+
+<section><div class="wrap">
+<h2 data-en="Who we work with" data-fr="Nos clients">Who we work with</h2>
+<ul class="who">
+<li data-en="Banks" data-fr="Banques">Banks</li>
+<li data-en="Insurance companies" data-fr="Compagnies d’assurance">Insurance companies</li>
+<li data-en="Investment and advisory firms" data-fr="Sociétés d’investissement et de conseil">Investment and advisory firms</li>
+<li data-en="NGOs and institutions" data-fr="ONG et institutions">NGOs and institutions</li>
+</ul>
+</div></section>
+
+<section id="contact"><div class="wrap contact">
+<h2 data-en="Start with a conversation" data-fr="Commençons par un échange">Start with a conversation</h2>
+<p data-en="Tell us what you are working on and where you feel exposed. We reply in English or French." data-fr="Dites-nous sur quoi vous travaillez et où vous vous sentez exposé. Nous répondons en français ou en anglais.">Tell us what you are working on and where you feel exposed. We reply in English or French.</p>
+<a class="btn" href="mailto:Abdoulkarim.liban@gmail.com?subject=LAM%20Advisory" data-en="Email LAM Advisory" data-fr="Écrire à LAM Advisory">Email LAM Advisory</a>
+<div class="social">
+<a href="mailto:abdoulkarim.liban@gmail.com?subject=LAM%20Advisory">abdoulkarim.liban@gmail.com</a>
+<a href="https://www.linkedin.com/in/liban-abdoulkarim-mohamed-494736300" target="_blank" rel="noopener">LinkedIn</a>
+<a href="https://www.facebook.com/share/1A8ZDGtU9b/" target="_blank" rel="noopener">Facebook</a>
+<a href="https://wa.me/252633761829" target="_blank" rel="noopener">WhatsApp</a>
+<a href="https://x.com/LAMAdvisory1" target="_blank" rel="noopener">X</a>
+</div>
+</div></section>
+
+<footer><div class="wrap">© 2026 LAM Advisory · Hargeisa</div></footer>
+</div>
+<script>
+(function(){
+var btns=document.querySelectorAll('.lang button');
+function set(l){
+document.documentElement.lang=l;
+document.querySelectorAll('[data-'+l+']').forEach(function(e){e.textContent=e.getAttribute('data-'+l)});
+btns.forEach(function(b){b.setAttribute('aria-pressed',b.dataset.l===l)});
+try{localStorage.setItem('lam-lang',l)}catch(e){}
+}
+btns.forEach(function(b){b.addEventListener('click',function(){set(b.dataset.l)})});
+var s=null;try{s=localStorage.getItem('lam-lang')}catch(e){}
+if(s==='fr')set('fr');
+})();
+</script>
+</body>
+</html>
